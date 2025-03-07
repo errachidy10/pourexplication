@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/errachidy10/VideoExplicatio.git'
+                git url: 'https://github.com/errachidy10/pourexplication.git'
             }
         }
         stage('Build') {
