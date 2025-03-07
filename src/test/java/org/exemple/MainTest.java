@@ -11,6 +11,6 @@ public class MainTest {
         // vérifier quelque chose de significatif dans votre application.
         // Dans cet exemple, on vérifie simplement que 1 + 1 est égal à 2.
 
-        assertEquals(11, 1 + 10);
+        assertEquals(50, 1 + 10);
     }
 }
