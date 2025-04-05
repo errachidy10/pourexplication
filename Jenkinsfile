@@ -8,13 +8,22 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean install' // Si vous utilisez Maven
-                // sh './gradlew build' // Si vous utilisez Gradle (remplacez 'build' par la tâche appropriée)
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'  // Si vous utilisez Maven et avez des tests
+                bat 'mvn test'
+            }
+        }
+        stage('Publish Test Results') {
+            steps {
+                junit '**/target/surefire-reports/*.xml'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                bat 'docker build -t monapp .'
             }
         }
     }
